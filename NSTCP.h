@@ -47,7 +47,7 @@
 /* Type Definitions */
 typedef char			TCP_IPADDR;
 typedef char			TCP_PROC_NAME;
-typedef unsigned short	TCP_PORT;
+typedef unsigned short		TCP_PORT;
 typedef char			ERROR_MESSAGE[128];
 /* These ones below you may already have, 
 *  feel free to remove if you need to
@@ -71,14 +71,14 @@ typedef struct tcp_connection_info
 {
 	TCP_IPADDR			ipaddr;
 	TCP_PORT			port;
-	TCP_PROC_NAME		process_name;
-	int					*sock;
+	TCP_PROC_NAME			process_name;
+	int				*sock;
 	long				sockaddr_len;
-	int					flags;
-	int					queue_len;
+	int				flags;
+	int				queue_len;
 	long				tag;
-	struct sockaddr_in	*sockaddr;
-	int					sock_shutdown_how;
+	struct sockaddr_in		*sockaddr;
+	int				sock_shutdown_how;
 } TCP_CONNECTION_INFO;
 
 /***************************************************************
@@ -101,24 +101,24 @@ typedef	struct _tcp
 	int(*set_bind)					(TCP_CONNECTION_INFO *);
 	int(*set_bind_nw)				(TCP_CONNECTION_INFO *);
 	int(*make_connect)				(TCP_CONNECTION_INFO *);
-	int(*make_connect_nw)			(TCP_CONNECTION_INFO *);
+	int(*make_connect_nw)				(TCP_CONNECTION_INFO *);
 	int(*set_listen)				(TCP_CONNECTION_INFO *);
 	int(*new_accept)				(TCP_CONNECTION_INFO *, int*);
 	int(*new_accept_nw)				(TCP_CONNECTION_INFO *);
-	int(*new_accept_nw1)			(TCP_CONNECTION_INFO *);
-	int(*new_accept_nw2)			(TCP_CONNECTION_INFO *);
-	int(*new_accept_nw3)			(TCP_CONNECTION_INFO *, struct sockaddr *);
+	int(*new_accept_nw1)				(TCP_CONNECTION_INFO *);
+	int(*new_accept_nw2)				(TCP_CONNECTION_INFO *);
+	int(*new_accept_nw3)				(TCP_CONNECTION_INFO *, struct sockaddr *);
 	int(*new_send)					(TCP_CONNECTION_INFO *, char*, int);
 	int(*new_send_nw)				(TCP_CONNECTION_INFO *, char*, int);
 	int(*new_recv)					(TCP_CONNECTION_INFO *, char*, int);
 	int(*new_recv_nw)				(TCP_CONNECTION_INFO *, char*, int);
 	int(*shutdown_sock)				(TCP_CONNECTION_INFO *, int);
-	int(*shutdown_sock_nw)			(TCP_CONNECTION_INFO *, int);
+	int(*shutdown_sock_nw)				(TCP_CONNECTION_INFO *, int);
 	int(*close_sock)				(TCP_CONNECTION_INFO *);
 	int(*get_sock_name)				(TCP_CONNECTION_INFO *);
-	int(*get_sock_name_nw)			(TCP_CONNECTION_INFO *);
-	void(*clean_conn_info)			(TCP_CONNECTION_INFO *);
-	void(*set_addtionals)			(TCP_CONNECTION_INFO *, int, int, long, long);
+	int(*get_sock_name_nw)				(TCP_CONNECTION_INFO *);
+	void(*clean_conn_info)				(TCP_CONNECTION_INFO *);
+	void(*set_addtionals)				(TCP_CONNECTION_INFO *, int, int, long, long);
 	void(*set_sockaddr)				(TCP_CONNECTION_INFO *, short);
 } TCP;
 
