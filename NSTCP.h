@@ -134,4 +134,4 @@ enum
 	ERROR = 2
 };
 
-#endif // !_IPCONNH_INCLUDE_
+#endif // !_NSTCPH_INCLUDE_
