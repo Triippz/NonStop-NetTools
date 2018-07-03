@@ -21,7 +21,7 @@
 *		1.0.0	  1/28/18		Initial Release 
 *************************************************************************************/
 
-#ifndef _IPCONNH_INCLUDE_
+#ifndef _NSTCPH_INCLUDE_
 
 #ifdef __TANDEM
 #include <stdio.h>
